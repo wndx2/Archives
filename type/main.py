@@ -1,16 +1,5 @@
-"""
-bobotype - v1
-
-created by wndx2 (sleepywndud) and caibirana2-eng
-
-"""
-
-# imports
-import os
-import sys
-import random
-import time
-import termios
+from imports import *
+from lib.clear import clear
 
 
 class Colors:
@@ -47,16 +36,6 @@ heartwarming_messages = [
 	'ni meiyou baba',
 	'ni shi gae',
 ]
-
-
-# terminal clearing function for cleaner output
-def clear():
-	# windows
-	if os.name == 'nt':
-		os.system('cls')
-	# mac/linux
-	else:
-		os.system('clear')
 
 
 # terminal input clearing function. (so that the users don't type during the countdown)

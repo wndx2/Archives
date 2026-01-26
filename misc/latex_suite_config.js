@@ -38,7 +38,7 @@
 	{trigger: "Ome", replacement: "\\Omega", options: "mA"},
 
     // TEXT ENVIRONMENTS
-    {trigger: "text", replacement: "\\text{$0}$1", options: "mA"},
+    {trigger: "tx", replacement: "\\text{$0}$1", options: "mA"},
     {trigger: "\"", replacement: "\\text{$0}$1", options: "mA"},
 
     // BASIC OPERATIONS
@@ -210,26 +210,10 @@
 
     // PHYSICS
 	{trigger: "kbt", replacement: "k_{B}T", options: "mA"},
-	{trigger: "msun", replacement: "M_{\\odot}", options: "mA"},
+	{ trigger: "msun", replacement: "M_{\\odot}", options: "mA" },
+	
 
-    // QUANTUM MECHANICS
-    {trigger: "dag", replacement: "^{\\dagger}", options: "mA"},
-	{trigger: "o+", replacement: "\\oplus ", options: "mA"},
-	{trigger: "ox", replacement: "\\otimes ", options: "mA"},
-    {trigger: "bra", replacement: "\\bra{$0} $1", options: "mA"},
-	{trigger: "ket", replacement: "\\ket{$0} $1", options: "mA"},
-	{trigger: "brk", replacement: "\\braket{ $0 | $1 } $2", options: "mA"},
-    {trigger: "outer", replacement: "\\ket{${0:\\psi}} \\bra{${0:\\psi}} $1", options: "mA"},
-
-    // CHEMISTRY
-	{trigger: "pu", replacement: "\\pu{ $0 }", options: "mA"},
-	{trigger: "cee", replacement: "\\ce{ $0 }", options: "mA"},
-	{trigger: "he4", replacement: "{}^{4}_{2}He ", options: "mA"},
-	{trigger: "he3", replacement: "{}^{3}_{2}He ", options: "mA"},
-	{trigger: "iso", replacement: "{}^{${0:4}}_{${1:2}}${2:He}", options: "mA"},
-
-
-    // ENVIRONMENTS
+    // ENVIRONMENTS (MATRIXES)
 	{trigger: "pmat", replacement: "\\begin{pmatrix}\n$0\n\\end{pmatrix}", options: "MA"},
 	{trigger: "bmat", replacement: "\\begin{bmatrix}\n$0\n\\end{bmatrix}", options: "MA"},
 	{trigger: "Bmat", replacement: "\\begin{Bmatrix}\n$0\n\\end{Bmatrix}", options: "MA"},
@@ -250,12 +234,6 @@
 
 
     // BRACKETS
-	{trigger: "avg", replacement: "\\langle $0 \\rangle $1", options: "mA"},
-	{trigger: "norm", replacement: "\\lvert $0 \\rvert $1", options: "mA", priority: 1},
-	{trigger: "Norm", replacement: "\\lVert $0 \\rVert $1", options: "mA", priority: 1},
-	{trigger: "ceil", replacement: "\\lceil $0 \\rceil $1", options: "mA"},
-	{trigger: "floor", replacement: "\\lfloor $0 \\rfloor $1", options: "mA"},
-	{trigger: "mod", replacement: "|$0|$1", options: "mA"},
 	{trigger: "(", replacement: "(${VISUAL})", options: "mA"},
 	{trigger: "[", replacement: "[${VISUAL}]", options: "mA"},
 	{trigger: "{", replacement: "{${VISUAL}}", options: "mA"},
@@ -271,11 +249,17 @@
 	// CUSTOM TRIGGERS
     {trigger: "fox", replacement: "f(x)", options: "mA"},
     {trigger: "fpox", replacement: "f'(x)", options: "mA"},
+    {trigger: "fppox", replacement: "f''(x)", options: "mA"},
     {trigger: "dis", replacement: "s(t)", options: "mA"},
     {trigger: "vel", replacement: "v(t)", options: "mA"},
     {trigger: "acc", replacement: "a(t)", options: "mA"},
+    {trigger: "deriv", replacement: "\\frac{dy}{dx}", options: "mA"},
+    {trigger: "2deriv", replacement: "\\frac{d^2y}{dx^2}", options: "mA"},
+    {trigger: "SP", replacement: "\\space $0", options: "mA"},
+    {trigger: "const", replacement: "+C ", options: "mA"},
+    {trigger: "box", replacement: "\\boxed{$0}", options: "mA"},
+	{trigger: "ld", replacement: "\\enclose{longdiv}{${1:dividend}}\\,${2:divisor}", options: "m"},  
 
-	{trigger: "tayl", replacement: "${0:f}(${1:x} + ${2:h}) = ${0:f}(${1:x}) + ${0:f}'(${1:x})${2:h} + ${0:f}''(${1:x}) \\frac{${2:h}^{2}}{2!} + \\dots$3", options: "mA", description: "Taylor expansion"},
 
 	{trigger: /iden(\d)/, replacement: (match) => {
 		const n = match[1];
