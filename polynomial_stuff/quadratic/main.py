@@ -1,7 +1,6 @@
 from imports import *
 from lib.clear import clear
 
-
 clear()
 
 while True:
@@ -14,15 +13,15 @@ while True:
         c = float(input("\nc : "))
 
         if a == 0:
-            print("\nMa ERROR.\n")
+            print("\nMa ERROR (a < 0).\n")
             input("Press any button to continue.")
             continue
-            # resets loop
 
         d = b**2 - 4 * a * c  # discriminant (** = ^)
 
         if d > 0:
             # '**0.5' = '√', squaring it to half (same as rooting)
+            # using quadratic formula, rounding to 4 decimal places
             x1 = round((-b + d**0.5) / (2 * a), 4)
             x2 = round((-b - d**0.5) / (2 * a), 4)
             print(f"\nTwo Real Solutions, as {Fore.GREEN}D = {d}{Fore.RESET} (D > 0):")
@@ -30,14 +29,19 @@ while True:
             print(f"    X2 [{Fore.GREEN}{x2}{Fore.RESET}]\n")
 
         elif d == 0:
+            # '**0.5' = '√', squaring it to half (same as rooting)
+            # using quadratic formula, rounding to 4 decimal places
             x = round(-b / (2 * a), 4)
             print(f"\nOne Real Solution, as {Fore.YELLOW}D = {d}{Fore.RESET} (D = 0):")
             print(f"    X1 [{Fore.YELLOW}{x}{Fore.RESET}] * 2\n")
 
         else:
+            # imaginary roots:
             print(f"\nNo Real Solution(s), as {Fore.RED}D = {d}{Fore.RESET} (D < 0).\n")
 
         input("Press any button to continue.")
 
+    # blocking inputs that aren't int/float
     except ValueError:
-        print("Invalid Input.\n")
+        print(f"\n{Fore.RED}Invalid Input.{Fore.RESET}\n")
+        input("Press any button to continue.")
