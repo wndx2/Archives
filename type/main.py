@@ -20,21 +20,22 @@ class Colors:
 # list of heartwarming messages you could get
 heartwarming_messages = [
 	'skill issues',
-	'baha sucker sucker',
 	'are you bobo?',
-	'imagine failing',
+	'N1',
 	'all green',
-	'not achieved in typing',
-	'fatass',
+	'not achieved',
+	'fatboi',
+	'100kg',
 	'ni shi stupid',
-	'bobo has a higher accuracy than you',
-	'om has a higher accuracy than you',
+	'sugumala',
+	'om has more E than you',
 	'L',
 	'cai jiu duo lian shu bu qi jiu bie wan yi qian shi yi qian xian zai shi xian zai',
 	'cai',
 	'you animal. no one care animal. so no one care you.',
 	'ni meiyou baba',
 	'ni shi gae',
+	'ni ai kevin',
 ]
 
 
